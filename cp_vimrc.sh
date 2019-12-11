@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cp ~/.vimrc ~/vim-setting
+cp ~/.vimrc .
 echo "Copied!"

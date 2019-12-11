@@ -9,11 +9,16 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/mru.vim'
 
+" Vim library
+Plug 'ascenator/L9', {'name': 'newL9'}
+
+" Appearance
+Plug 'nanotech/jellybeans.vim'
+Plug 'https://github.com/itchyny/lightline.vim'
+
 " HTML, CSS
 Plug 'mattn/emmet-vim'
 Plug 'https://github.com/skammer/vim-css-color'
-Plug 'https://github.com/itchyny/lightline.vim'
-Plug 'ascenator/L9', {'name': 'newL9'}
 
 " JavaScript, TypeScript
 Plug 'prettier/vim-prettier', { 'do': 'yarn install'}
@@ -23,7 +28,6 @@ Plug 'leafgarland/typescript-vim'
 "Python
 Plug 'nvie/vim-flake8'
 Plug 'psf/black'
-Plug 'nanotech/jellybeans.vim'
 
 "Autocompletion, Snippets
 Plug 'SirVer/ultisnips'
@@ -64,6 +68,11 @@ let g:flake8_show_in_file=1
 let g:flake8_max_markers=500
 autocmd BufWritePre *.py execute ':Black'
 autocmd BufWritePost *.py call flake8#Flake8()
+
+"Go setting
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
 
 
 "Coc.nvim setting 
