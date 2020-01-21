@@ -13,8 +13,9 @@ Plug 'vim-scripts/mru.vim'
 Plug 'ascenator/L9', {'name': 'newL9'}
 
 " Appearance
-Plug 'nanotech/jellybeans.vim'
+" Plug 'nanotech/jellybeans.vim'
 Plug 'https://github.com/itchyny/lightline.vim'
+Plug 'NLKNguyen/papercolor-theme'
 
 " HTML, CSS
 Plug 'mattn/emmet-vim'
@@ -28,6 +29,7 @@ Plug 'leafgarland/typescript-vim'
 "Python
 Plug 'nvie/vim-flake8'
 Plug 'psf/black'
+Plug 'vim-python/python-syntax'
 
 "Autocompletion, Snippets
 Plug 'SirVer/ultisnips'
@@ -52,6 +54,10 @@ set shiftwidth=2
 set tabstop=2
 set nu
 
+set t_Co=256
+set background=dark
+colorscheme PaperColor
+
 
 "Javascript setting
 
@@ -68,6 +74,8 @@ let g:flake8_show_in_file=1
 let g:flake8_max_markers=500
 autocmd BufWritePre *.py execute ':Black'
 autocmd BufWritePost *.py call flake8#Flake8()
+let g:python_highlight_all = 1
+
 
 "Go setting
 let g:go_def_mode='gopls'
